@@ -1,21 +1,20 @@
-#ifndef COMPONENTS.H
-#define COMPONENTS.H
+#ifndef COMPONENTS_H
+#define COMPONENTS_H
 
 #include <stdbool.h>
-typedef struct Component {
+typedef struct CircuitComponent {
     char name[20];
     int x;
     int y;
-    int length;
     Node node1;
     Node node2; 
     Node node3;
     double power;
     double value;
-    void (*action)(struct Component*, int);
+    void (*action)(struct CircuitComponent*, int);
     ComponentState state;
     ComponentType type;
-} Component;
+} CircuitComponent;
 typedef enum ComponentType {
     RESISTOR,
     WIRE,
@@ -31,5 +30,7 @@ typedef struct ComponentState {
     bool enabled;
     bool energized;
 } ComponentState;
+
+void update_component(CircuitComponent* comp);
 
 #endif //COMPONENTS.H

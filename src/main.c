@@ -1,4 +1,5 @@
 #include <ncurses.h>
+#include "program.h"
 
 void initNcurses() {
     initscr();           
@@ -11,6 +12,7 @@ void initNcurses() {
 int main() {
     initNcurses();
 
+    run_program();
     
     endwin();
 }

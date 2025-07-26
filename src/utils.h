@@ -1,7 +1,5 @@
 #ifndef UTILS_H
 #define UTILS_H
-#ifndef COMMON_H
-#define COMMON_H
 
 #include <ncurses.h>
 #include <stdbool.h>
@@ -30,6 +28,5 @@ typedef enum {
     DOWN_LEFT,
     NONE_DIRECTION
 } Direction;
-#endif
 
 #endif //UTILS_H

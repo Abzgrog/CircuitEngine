@@ -5,25 +5,24 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+int WIN_WIDTH;
+int WIN_HEIGHT;
 
-static void update_window_size(int width, int height) {
-    width = getmaxy(stdscr);
-    height  = getmaxx(stdscr);
+void update_window_size() {
+    WIN_HEIGHT = getmaxy(stdscr);
+    WIN_WIDTH  = getmaxx(stdscr);
 }
-int get_current_window_size(int type) { 
-    int WIN_WIDTH = 0;
-    int WIN_HEIGHT = 0;
-    
-    update_window_size(WIN_WIDTH, WIN_HEIGHT);
+int get_current_window_size(int type) {
+    update_window_size();
 
     switch (type)
     {
-    case 120:
+    case GET_WIDTH:
         return WIN_WIDTH;
-    case 121:
+    case GET_HEIGHT:
         return WIN_HEIGHT;
-        default: return;
-    } 
+    default: return 0; // Return 0 for unknown type
+    }
 }
 void print_in_center(char string[]) {
     int lenght = strlen(string);

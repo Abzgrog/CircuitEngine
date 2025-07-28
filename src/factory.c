@@ -2,7 +2,9 @@
 #include "circuit.h"
 #include "program.h"
 #include "utils.h"
+#include "globals.h"
 #include <stdlib.h>
+#include <ncurses.h>
 
 /*CREATING ALL ENTITIES*/
 int offset = 0;
@@ -25,7 +27,7 @@ CircuitComponent* create_component(ComponentType type, int x, int y, void (*acti
     case RESISTOR:
         component->value = 120; //OM
         return component;
-        break; 
+        break;
     case WIRE:
         break;
     default: return;

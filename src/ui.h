@@ -2,9 +2,10 @@
 #define UI_H
 
 #include "components.h"
-#include "globals.h"
 
 #define MENU_BUTTONS_COUNT 4
+#define BUFFER_WIDTH 50
+#define BUFFER_HEIGHT 30
 
 typedef struct Screen {
     char buffer[BUFFER_HEIGHT][BUFFER_WIDTH];
@@ -24,6 +25,8 @@ void draw_component();
 void draw_all_components();
 void draw_menu();
 void draw_and_init_buttons();
+
+
 
 
 

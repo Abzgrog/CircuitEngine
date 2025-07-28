@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -std=c11 -g
 LDFLAGS = -lncurses
 TARGET = Program
 
-SRCS = main.c
+SRCS = main.c circuit.c globals.c utils.c ui.c factory.c program.c
 
 all: $(TARGET)
 

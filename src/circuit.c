@@ -7,6 +7,7 @@ void none() {
 
 Circuit* init_circuit() {
     Circuit* c = create_circuit();
+    return c;
 }
 
 

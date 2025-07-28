@@ -6,10 +6,6 @@
 #include <stdlib.h>
 
 void none();
-Circuit* init_circuit();
-void update_circuit(Circuit* c);
-void circuit_loop(Circuit* c);
-
 
 typedef struct Circuit {
     CircuitComponent* components[MAX_COMPONENTS];
@@ -17,4 +13,7 @@ typedef struct Circuit {
     bool enabled;
 } Circuit;
 
+void update_circuit(Circuit* c);
+void circuit_loop(Circuit* c);
+Circuit* init_circuit();
 #endif //CIRCUIT_H

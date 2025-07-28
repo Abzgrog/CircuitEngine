@@ -1,10 +1,13 @@
 #include <ncurses.h>
 #include "program.h"
+#include "factory.h"
+#include "globals.h"
 
 void initNcurses() {
-    initscr();           
-    cbreak();            
-    noecho();             
+    initscr();
+    start_color();
+    cbreak();
+    noecho();
     keypad(stdscr, TRUE);
     curs_set(0);
 }

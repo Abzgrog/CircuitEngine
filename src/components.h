@@ -2,6 +2,21 @@
 #define COMPONENTS_H
 
 #include <stdbool.h>
+typedef enum ComponentType {
+    RESISTOR,
+    WIRE,
+    LED,
+    VOLTAGE_SOURCE,
+    SWITCH
+} ComponentType;
+typedef struct ComponentState {
+    bool enabled;
+    bool energized;
+} ComponentState;
+typedef struct Node {
+    int x;
+    int y;
+} Node;
 typedef struct CircuitComponent {
     char name[20];
     int x;
@@ -15,21 +30,6 @@ typedef struct CircuitComponent {
     ComponentState state;
     ComponentType type;
 } CircuitComponent;
-typedef enum ComponentType {
-    RESISTOR,
-    WIRE,
-    LED,
-    VOLTAGE_SOURCE,
-    SWITCH
-} ComponentType;
-typedef struct Node {
-    int x;
-    int y;
-} Node;
-typedef struct ComponentState {
-    bool enabled;
-    bool energized;
-} ComponentState;
 
 void update_component(CircuitComponent* comp);
 

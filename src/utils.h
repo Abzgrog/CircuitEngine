@@ -5,6 +5,8 @@
 #include <stdbool.h>
 
 #define ERROR_HANDLING "Handling error!"
+#define GET_WIDTH 120
+#define GET_HEIGHT 121
 #define ALLOC_STRUCT(type) \
     (type*)malloc(sizeof(type))
 

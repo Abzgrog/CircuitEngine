@@ -13,6 +13,7 @@ void circuit_loop(Circuit* c);
 
 typedef struct Circuit {
     CircuitComponent* components[MAX_COMPONENTS];
+    int count_components;
     bool enabled;
 } Circuit;
 

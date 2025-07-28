@@ -3,14 +3,15 @@
 #include "circuit.h"
 
 typedef struct Program {
+    bool program_running;
     ProgramState program_state;
     Circuit* circuit;
 } Program;
 
 typedef enum ProgramState {
-    Menu,
-    Settings,
-    CircuitProccess
+    ProgramStateMenu,
+    ProgramStateSettings,
+    ProgramStateCircuitProccess
 } ProgramState;
 
 void run_program();

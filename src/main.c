@@ -11,7 +11,7 @@ void initNcurses() {
 
 int main() {
     initNcurses();
-
+    
     run_program();
     
     endwin();

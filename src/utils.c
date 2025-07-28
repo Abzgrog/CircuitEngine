@@ -5,8 +5,6 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
-#define GET_WIDTH 120
-#define GET_HEIGHT 121
 
 static void update_window_size(int width, int height) {
     width = getmaxy(stdscr);

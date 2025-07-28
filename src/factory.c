@@ -1,17 +1,25 @@
 #include "factory.h"
 #include "circuit.h"
 #include "program.h"
+#include "utils.h"
 #include <stdlib.h>
 
+/*CREATING ALL ENTITIES*/
+int offset = 0;
+
 CircuitComponent* create_component(ComponentType type, int x, int y, void (*action)(struct CircuitComponent*, int)) {
-    CircuitComponent* component = malloc(sizeof(CircuitComponent));
+    //todo implement creating all components by switch
+
+
+    /*CircuitComponent* component = malloc(sizeof(CircuitComponent));
     component->type = type;
     component->x = x;
     component->y = y;
     component->state.enabled = false;
     component->state.energized = false;
-    component->action = none;
+    component->action = none; // will use that in switch case
 
+    /*
     switch (type)
     {
     case RESISTOR:
@@ -22,6 +30,7 @@ CircuitComponent* create_component(ComponentType type, int x, int y, void (*acti
         break;
     default: return;
     }
+    */
 }
 
 Circuit* create_circuit() {
@@ -40,6 +49,92 @@ Program* create_program() {
         return NULL;
     }
     program->circuit = init_circuit();
-    program->program_state = Menu;
+    program->program_state = ProgramStateMenu;
+    program->program_running = true;
     return program;
 }
+
+Button* create_button(int x, int y, char* name) {
+    Button* b = malloc(sizeof(Button));
+
+    if(b == NULL) {
+        return NULL;
+    }
+
+    b->x = x;
+    b->y = y;
+    b->name = name;
+    b->selected = false;
+
+    return b;
+}
+
+MenuButtons* create_menu_buttons() {
+    MenuButtons* mb = malloc(sizeof(MenuButtons));
+
+    if(mb == NULL) {
+        return NULL;
+    }
+
+    int win_width = get_current_window_size(GET_WIDTH);
+    int win_height = get_current_window_size(GET_HEIGHT);
+    int center_width = win_width / 2;
+    int center_height = win_height / 2;
+
+    Button* start_button = create_button(center_width, center_height - offset, "Start"); offset +=2;
+    Button* load_button = create_button(center_width, center_height - offset, "Load Circuit"); offset +=2;
+    Button* settings_button = create_button(center_width, center_height - offset, "Settings"); offset +=2;
+    Button* exit_button = create_button(center_width, center_height - offset, "Exit"); offset +=2;
+
+    mb->buttons[0] = start_button;
+    mb->buttons[1] = load_button;
+    mb->buttons[2] = settings_button;
+    mb->buttons[3] = exit_button;
+
+    return mb;
+
+}
+
+/*FREE ALL ENTITIES*/
+void free_button(Button* b) {
+    if(b) {
+        if(b->name) {
+            free(b->name);
+        }
+        free(b);
+    }
+}
+void free_menu_buttons(MenuButtons* mb) {
+    if(mb) {
+        for(int i = 0; i < MENU_BUTTONS_COUNT; i++) {
+            if(mb->buttons[i]) {
+                free_button(mb->buttons[i]);
+            }
+        }
+        free(mb->buttons);
+        free(mb);
+    }
+}
+void free_circuit(Circuit* c) {
+    if(c) {
+        for(int i = 0; i < c->count_components; i++) {
+            free_circuit_component(c->components[i]);
+        }
+        free(c);
+    }
+}
+void free_circuit_component(CircuitComponent* cc) {
+    if(cc) {
+        free(cc->action);
+        free(cc->name);
+        free(cc);
+    }
+}
+void free_program(Program* p) {
+    if(p) {
+        free_circuit(p->circuit);
+        free(p);
+    }
+}
+
+

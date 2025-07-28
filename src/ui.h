@@ -4,11 +4,27 @@
 #include "components.h"
 #include "globals.h"
 
+#define MENU_BUTTONS_COUNT 4
+
 typedef struct Screen {
     char buffer[BUFFER_HEIGHT][BUFFER_WIDTH];
 } Screen;
 
+typedef struct Button {
+    int x;
+    int y;
+    char* name;
+    bool selected;
+} Button;
+
+typedef struct MenuButtons {
+    Button* buttons[MENU_BUTTONS_COUNT];
+} MenuButtons;
 void draw_component();
 void draw_all_components();
+void draw_menu();
+void draw_and_init_buttons();
+
+
 
 #endif //UI_H

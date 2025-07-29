@@ -1,6 +1,8 @@
 #include "ui.h"
 #include "utils.h"
 #include "factory.h"
+#include "globals.h"
+#include "logger.h"
 #include <ncurses.h>
 
 void draw_menu() {
@@ -17,5 +19,6 @@ void draw_and_init_buttons() {
         mvprintw(mb->buttons[i]->y - offset, mb->buttons[i]->x, "%s", mb->buttons[i]->name);
     }
     attroff(COLOR_PAIR(1));
+
     getch();
 }

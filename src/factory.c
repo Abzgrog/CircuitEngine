@@ -72,7 +72,6 @@ Button* create_button(int x, int y, char* name) {
 
 MenuButtons* create_menu_buttons() {
     MenuButtons* mb = malloc(sizeof(MenuButtons));
-    //offset == 0
     if(mb == NULL) {
         return NULL;
     }
@@ -93,7 +92,11 @@ MenuButtons* create_menu_buttons() {
     mb->buttons[3] = exit_button;
 
     return mb;
+}
 
+Logger* create_logger() {
+    Logger* logger = malloc(sizeof(Logger));
+    return logger;
 }
 
 /*FREE ALL ENTITIES*/

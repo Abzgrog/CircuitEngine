@@ -6,7 +6,7 @@
 
 #define MAX_LOGS 100
 #define MAX_LOG_LENGHT 100
-#define LOG_FILE_PATH "/home/nikita/MyProjects/CircuitEngineGit/logs/log.txt" 
+#define LOG_FILE_PATH "../logs/log.txt"
 
 typedef enum LoggerLevel {
     INFO,

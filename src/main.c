@@ -8,8 +8,12 @@ void initNcurses() {
     start_color();
     cbreak();
     noecho();
+    nodelay(stdscr, TRUE);
     keypad(stdscr, TRUE);
+    mousemask(ALL_MOUSE_EVENTS | REPORT_MOUSE_POSITION, NULL);
     curs_set(0);
+    init_pair(1, COLOR_GREEN, COLOR_BLACK);
+    init_pair(2, COLOR_RED, COLOR_BLACK);
 }
 
 int main() {

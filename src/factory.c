@@ -7,7 +7,6 @@
 #include <ncurses.h>
 
 /*CREATING ALL ENTITIES*/
-int offset = 0;
 
 CircuitComponent* create_component(ComponentType type, int x, int y, void (*action)(struct CircuitComponent*, int)) {
     //todo implement creating all components by switch
@@ -72,9 +71,14 @@ Button* create_button(int x, int y, char* name) {
 }
 
 MenuButtons* create_menu_buttons() {
-    MenuButtons* mb = malloc(sizeof(MenuButtons));
+    static MenuButtons* mb = NULL;  
 
-    if(mb == NULL) {
+    if (mb != NULL) {
+        return mb; 
+    }
+
+    mb = malloc(sizeof(MenuButtons));
+    if (mb == NULL) {
         return NULL;
     }
 
@@ -83,18 +87,24 @@ MenuButtons* create_menu_buttons() {
     int center_width = win_width / 2;
     int center_height = win_height / 2;
 
-    Button* start_button = create_button(center_width, center_height - offset, "Start"); offset +=2;
-    Button* load_button = create_button(center_width, center_height - offset, "Load Circuit"); offset +=2;
-    Button* settings_button = create_button(center_width, center_height - offset, "Settings"); offset +=2;
-    Button* exit_button = create_button(center_width, center_height - offset, "Exit"); offset +=2;
-
+    Button* start_button = create_button(center_width, center_height, "Start");
+    Button* load_button = create_button(center_width, center_height, "Load Circuit"); 
+    Button* settings_button = create_button(center_width, center_height, "Settings"); 
+    Button* exit_button = create_button(center_width, center_height, "Exit"); 
+    start_button->selected = true;
     mb->buttons[0] = start_button;
     mb->buttons[1] = load_button;
     mb->buttons[2] = settings_button;
     mb->buttons[3] = exit_button;
 
-    return mb;
+    log_message(global_logger, INFO, "Menu initialized successfully");
 
+    return mb;
+}
+
+Logger* create_logger() {
+    Logger* logger = malloc(sizeof(Logger));
+    return logger;
 }
 
 /*FREE ALL ENTITIES*/

@@ -24,7 +24,7 @@ typedef struct  Logger {
     int logs_count_error;
 } Logger;
 
-void log_massage(Logger* logger, LoggerLevel logger_level, char* message);
+void log_message(Logger* logger, LoggerLevel logger_level, char* message);
 bool is_log_buffer_full(Logger* l, LoggerLevel lv);
 void clear_logger_file(Logger* logger);
 

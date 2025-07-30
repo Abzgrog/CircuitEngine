@@ -37,7 +37,7 @@ void print_in_center(char string[]) {
     refresh();
 }
 
-void close_terminal() {
+void kill_terminal() {
     endwin();
     exit(0);
 }

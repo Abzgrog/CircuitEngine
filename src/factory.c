@@ -71,8 +71,14 @@ Button* create_button(int x, int y, char* name) {
 }
 
 MenuButtons* create_menu_buttons() {
-    MenuButtons* mb = malloc(sizeof(MenuButtons));
-    if(mb == NULL) {
+    static MenuButtons* mb = NULL;  
+
+    if (mb != NULL) {
+        return mb; 
+    }
+
+    mb = malloc(sizeof(MenuButtons));
+    if (mb == NULL) {
         return NULL;
     }
 
@@ -85,11 +91,13 @@ MenuButtons* create_menu_buttons() {
     Button* load_button = create_button(center_width, center_height, "Load Circuit"); 
     Button* settings_button = create_button(center_width, center_height, "Settings"); 
     Button* exit_button = create_button(center_width, center_height, "Exit"); 
-
+    start_button->selected = true;
     mb->buttons[0] = start_button;
     mb->buttons[1] = load_button;
     mb->buttons[2] = settings_button;
     mb->buttons[3] = exit_button;
+
+    log_message(global_logger, INFO, "Menu initialized successfully");
 
     return mb;
 }

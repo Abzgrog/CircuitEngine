@@ -1,7 +1,6 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
-// Предварительные объявления вместо включения заголовочных файлов
 struct Program;
 struct Logger;
 
@@ -11,6 +10,7 @@ struct Logger;
 
 extern struct Program* global_program;
 extern struct Logger* global_logger;
+
 void init_all_extern_globals();
 
 #endif //GLOBAL_H

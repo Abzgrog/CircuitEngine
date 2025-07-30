@@ -21,10 +21,12 @@ typedef struct Button {
 typedef struct MenuButtons {
     Button* buttons[MENU_BUTTONS_COUNT];
 } MenuButtons;
+MenuButtons* get_menu_buttons();
+void draw_button_extra(Button* b);
+void clear_button_extra(Button* b);
 void draw_component();
 void draw_all_components();
 void draw_menu();
-void draw_and_init_buttons();
 
 
 

@@ -16,7 +16,7 @@ extern int WIN_HEIGHT;
 
 void update_window_size(); // This function will update global WIN_WIDTH and WIN_HEIGHT
 int get_current_window_size(int type);
-void close_terminal();
+void kill_terminal();
 void print_in_center(char string[]);
 long long get_current_time_ms();
 typedef enum {

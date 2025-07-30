@@ -1,15 +1,16 @@
 #ifndef PROGRAM_H
 #define PROGRAM_H
 
-#include <stdbool.h>
+#include <stdbool.h>    
 
-// Предварительное объявление вместо включения заголовочного файла
 struct Circuit;
 
 typedef enum ProgramState {
     ProgramStateMenu,
     ProgramStateSettings,
-    ProgramStateCircuitProccess
+    ProgramStateCircuitProccess,
+    ProgramStateExiting,
+    ProgramStateLogger
 } ProgramState;
 typedef struct Program {
     bool program_running;

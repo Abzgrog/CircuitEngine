@@ -28,7 +28,7 @@ bool is_log_buffer_full(Logger* logger, LoggerLevel lv) {
     return false;
 }
 
-void log_massage(Logger* logger, LoggerLevel logger_level, char* massage) {
+void log_message(Logger* logger, LoggerLevel logger_level, char* massage) {
     if(is_log_buffer_full(logger, logger_level)) {
         return;
     }

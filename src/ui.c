@@ -52,7 +52,7 @@ void draw_menu() {
             attron(COLOR_PAIR(2));
             
             mb->buttons[i]->y = mb->buttons[i]->y - y_offset;
-            mb->buttons[i]->x = mb->buttons[i]->x - strlen(mb->buttons[i]->name) / 2;
+            mb->buttons[i]->x = mb->buttons[i]->x - strlen(mb->buttons[i]->name) / 2 - 1;
 
             mvprintw(mb->buttons[i]->y, mb->buttons[i]->x, "%s", mb->buttons[i]->name);
             attroff(COLOR_PAIR(2));
@@ -64,4 +64,8 @@ void draw_menu() {
     }
     attroff(COLOR_PAIR(1));
     getch();
+}
+void clear_menu() {
+    //todo 
+    //the menu should be cleared by coordinates(clear() - screen flicker)
 }

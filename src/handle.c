@@ -72,17 +72,17 @@ void program_state_menu_handle(int key) {
                 idx = i;
             }
         }
-        if(strcmp(mb->buttons[idx]->name, "Exit") == 0) {
+        if(strcmp(mb->buttons[idx]->name, "EXIT") == 0) {
             global_program->program_state = ProgramStateExiting;
         } 
         
-        if(strcmp(mb->buttons[idx]->name, "New Circuit") == 0) {
+        if(strcmp(mb->buttons[idx]->name, "NEW CIRCUIT") == 0) {
         } 
 
-        if(strcmp(mb->buttons[idx]->name, "Load Circuit") == 0) {
+        if(strcmp(mb->buttons[idx]->name, "LOAD CIRCUIT") == 0) {
         } 
 
-        if(strcmp(mb->buttons[idx]->name, "Settings") == 0) {
+        if(strcmp(mb->buttons[idx]->name, "SETTINGS") == 0) {
         } 
     }
 }
@@ -96,41 +96,4 @@ void keyboard_handle(int key) {
         program_state_menu_handle(key);
     } //todo else variations
     
-    /*switch (key)
-    {
-        case KEY_F(2):
-        //todo logger window
-        break;
-    case KEY_ENTER: 
-        //todo add 3 state settings circuit menu
-        break;
-    case __KEY_ESC:
-        log_message(global_logger, DEBUG, "Esc was pressed");
-        global_program->program_state = ProgramStateExiting; 
-    break;
-    case KEY_UP:
-        MenuButtons* mb = get_menu_buttons();
-        menu_navigation(mb, UP);
-        break;
-    case KEY_DOWN:
-        MenuButtons* mb = get_menu_buttons();
-        menu_navigation(mb, UP);
-        break;
-    case KEY_LEFT:
-        MenuButtons* mb = get_menu_buttons();
-        menu_navigation(mb, UP);
-        break;
-    case KEY_RIGHT:
-        MenuButtons* mb = get_menu_buttons();
-        menu_navigation(mb, UP);
-        break;
-    case ERR:
-        break;
-    default:
-        log_message(global_logger, WARNING, "Unknown key in handler");
-    
-        break;
-        
-    }
-        */
 }

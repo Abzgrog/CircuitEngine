@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11 -g
-LDFLAGS = -lncurses
+LDFLAGS = -lncurses -lpanel
 TARGET = Program
 
-SRCS = main.c circuit.c globals.c utils.c ui.c factory.c program.c logger.c handle.c
+SRCS = main.c circuit.c globals.c utils.c ui.c factory.c program.c logger.c handle.c circuit_ui.c command_console.c
 
 all: $(TARGET)
 

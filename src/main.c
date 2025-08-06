@@ -2,6 +2,10 @@
 #include "program.h"
 #include "factory.h"
 #include "globals.h"
+#define MIN_ROWS 30
+#define MIN_COLS 100
+
+bool check_fullscreen();
 
 void initNcurses() {
     initscr();
@@ -18,7 +22,7 @@ void initNcurses() {
 
 int main() {
     initNcurses();
-    
+       
     run_program();
     
     endwin();

@@ -22,7 +22,6 @@ void draw_button_extra(Button* b) {
     mvaddch(y, x + right_offset, '<');
     attroff(COLOR_PAIR(1));
 
-    log_message(global_logger, DEBUG, "add extra");
 }
 void clear_button_extra(Button* b) {
     int x, y;
@@ -34,7 +33,6 @@ void clear_button_extra(Button* b) {
 
     mvaddch(y, x - left_offset, ' ');
     mvaddch(y, x + right_offset, ' ');
-    log_message(global_logger, DEBUG, "clear extra");
 }
 void draw_menu() {
     MenuButtons* mb = get_menu_buttons(); // mb is a static struct, when we draw buttons many times, struct DONT creating everytime

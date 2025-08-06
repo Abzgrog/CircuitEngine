@@ -1,4 +1,5 @@
 #include <ncurses.h>
+#include <string.h>
 #include "utils.h"
 #include "logger.h"
 #include "program.h"
@@ -49,12 +50,40 @@ void menu_navigation(MenuButtons* mb, Direction dir) {
     }
 }
 void program_state_menu_handle(int key) {
+    MenuButtons* mb = get_menu_buttons();
     if(key == KEY_UP || key == KEY_DOWN) {
         Direction dir = get_direction(key);
-        MenuButtons* mb = get_menu_buttons();
         menu_navigation(mb, dir);
-    } else {
-        //todo "enter, f2"
+    }
+
+    if(key == KEY_ESC) {
+        global_program->program_state = ProgramStateExiting;
+    }
+
+    if(key == KEY_F(2)) {
+        global_program->program_state = ProgramStateLogger;
+    }
+
+    if(key == '\n') {
+        log_message(global_logger, DEBUG, "Enter was pressed");
+        int idx = 0;
+        for(int i = 0; i < MENU_BUTTONS_COUNT; i++) {
+            if(mb->buttons[i]->selected) {
+                idx = i;
+            }
+        }
+        if(strcmp(mb->buttons[idx]->name, "Exit") == 0) {
+            global_program->program_state = ProgramStateExiting;
+        } 
+        
+        if(strcmp(mb->buttons[idx]->name, "New Circuit") == 0) {
+        } 
+
+        if(strcmp(mb->buttons[idx]->name, "Load Circuit") == 0) {
+        } 
+
+        if(strcmp(mb->buttons[idx]->name, "Settings") == 0) {
+        } 
     }
 }
 
@@ -75,7 +104,7 @@ void keyboard_handle(int key) {
     case KEY_ENTER: 
         //todo add 3 state settings circuit menu
         break;
-    case KEY_ESC:
+    case __KEY_ESC:
         log_message(global_logger, DEBUG, "Esc was pressed");
         global_program->program_state = ProgramStateExiting; 
     break;

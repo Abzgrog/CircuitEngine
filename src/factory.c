@@ -87,10 +87,10 @@ MenuButtons* create_menu_buttons() {
     int center_width = win_width / 2;
     int center_height = win_height / 2;
 
-    Button* start_button = create_button(center_width, center_height, "Start");
-    Button* load_button = create_button(center_width, center_height, "Load Circuit"); 
-    Button* settings_button = create_button(center_width, center_height, "Settings"); 
-    Button* exit_button = create_button(center_width, center_height, "Exit"); 
+    Button* start_button = create_button(center_width, center_height, "NEW CIRCUIT");
+    Button* load_button = create_button(center_width, center_height, "LOAD CIRCUIT"); 
+    Button* settings_button = create_button(center_width, center_height, "SETTINGS"); 
+    Button* exit_button = create_button(center_width, center_height, "EXIT"); 
     start_button->selected = true;
     mb->buttons[0] = start_button;
     mb->buttons[1] = load_button;

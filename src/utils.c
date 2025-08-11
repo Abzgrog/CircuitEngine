@@ -12,6 +12,27 @@ void update_window_size() {
     WIN_HEIGHT = getmaxy(stdscr);
     WIN_WIDTH  = getmaxx(stdscr);
 }
+bool string_array_equals(char** strarr, char** strarr2) {
+    int i = 0;
+    
+    while(strarr[i] != NULL && strarr2[i] != NULL) {
+        int cmp = strcmp(strarr[i], strarr2[i]);
+
+        if(cmp != 0) {
+            return false;
+        }
+
+        if(strarr[i] == NULL && strarr2 == NULL) {
+            return true;
+        }
+        
+        if(strarr[i] == NULL || strarr2 == NULL) {
+            return false;
+        }
+        i++;
+    }
+
+}
 int get_current_window_size(int type) {
     update_window_size();
 

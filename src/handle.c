@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include <string.h>
+#include "command_console.h"
 #include "utils.h"
 #include "logger.h"
 #include "program.h"
@@ -77,6 +78,7 @@ void program_state_menu_handle(int key) {
         } 
         
         if(strcmp(mb->buttons[idx]->name, "NEW CIRCUIT") == 0) {
+            global_program->program_state = ProgramStateCircuitProccess;
         } 
 
         if(strcmp(mb->buttons[idx]->name, "LOAD CIRCUIT") == 0) {
@@ -87,13 +89,23 @@ void program_state_menu_handle(int key) {
     }
 }
 
-void program_state_circuit_handle(); //todo circuithandle
+void program_state_circuit_handle(int key) {
+    if(key == KEY_ESC) {
+        global_program->program_state = ProgramStateMenu;
+        clear();
+        refresh();
+    }
+}
 void program_state_settings_handle();// todo settingshandle
 void program_state_logger_handle(); //todo loggerhandle
 
 void keyboard_handle(int key) {
     if(global_program->program_state == ProgramStateMenu) {
         program_state_menu_handle(key);
-    } //todo else variations
+    } 
+    if(global_program->program_state == ProgramStateCircuitProccess) {
+        program_state_circuit_handle(key);
+    }
+    //todo else variations
     
 }

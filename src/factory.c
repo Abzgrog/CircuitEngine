@@ -52,6 +52,30 @@ Program* create_program() {
     program->circuit = init_circuit();
     program->program_state = ProgramStateMenu;
     program->program_running = true;
+
+    int width, height;
+    width = get_current_window_size(GET_WIDTH);
+    height = get_current_window_size(GET_HEIGHT);
+
+    program->prev_frame_program_buffer = calloc(height, sizeof(char*));
+    if (program->prev_frame_program_buffer == NULL) {
+        free(program);
+        return NULL;
+    }
+
+    for(int i = 0; i < height; i++) {
+        program->prev_frame_program_buffer[i] = calloc(width, sizeof(char));
+        if (program->prev_frame_program_buffer[i] == NULL) {
+            // Освободить ранее выделенную память
+            for(int j = 0; j < i; j++) {
+                free(program->prev_frame_program_buffer[j]);
+            }
+            free(program->prev_frame_program_buffer);
+            free(program);
+            return NULL;
+        }
+    }
+    
     return program;
 }
 
@@ -104,6 +128,9 @@ MenuButtons* create_menu_buttons() {
 
 Logger* create_logger() {
     Logger* logger = malloc(sizeof(Logger));
+    if (logger == NULL) {
+        return NULL;
+    }
     return logger;
 }
 

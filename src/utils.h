@@ -16,6 +16,7 @@ extern int WIN_HEIGHT;
 
 void update_window_size(); // This function will update global WIN_WIDTH and WIN_HEIGHT
 int get_current_window_size(int type);
+bool string_array_equals(char** strarr, char** strarr2);
 void kill_terminal();
 void print_in_center(char string[]);
 long long get_current_time_ms();

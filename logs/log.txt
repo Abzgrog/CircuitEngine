@@ -1,4 +1,4 @@
-[2025-08-06 20:23:05] [INFO] Menu initialized successfully
-[2025-08-06 20:23:08] [DEBUG] Enter was pressed
-[2025-08-06 20:23:35] [DEBUG] Enter was pressed
-[2025-08-06 20:23:35] [INFO] The program finished successfully
+[2025-08-11 14:49:45] [INFO] Menu initialized successfully
+[2025-08-11 14:49:47] [DEBUG] Enter was pressed
+[2025-08-11 14:49:55] [DEBUG] Enter was pressed
+[2025-08-11 14:49:55] [INFO] The program finished successfully

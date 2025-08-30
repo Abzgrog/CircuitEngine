@@ -20,6 +20,7 @@ bool string_array_equals(char** strarr, char** strarr2);
 void kill_terminal();
 void print_in_center(char string[]);
 long long get_current_time_ms();
+char* get_key_name_by_id(int key);
 typedef enum {
     UP,
     DOWN,

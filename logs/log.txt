@@ -1,4 +1,56 @@
-[2025-08-11 14:49:45] [INFO] Menu initialized successfully
-[2025-08-11 14:49:47] [DEBUG] Enter was pressed
-[2025-08-11 14:49:55] [DEBUG] Enter was pressed
-[2025-08-11 14:49:55] [INFO] The program finished successfully
+[2025-08-30 18:33:01] [INFO] Menu initialized successfully..
+[2025-08-30 18:33:01] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-30 18:33:03] [DEBUG] Pressed key (CLI) = 67
+[2025-08-30 18:33:03] [DEBUG] C
+[2025-08-30 18:33:03] [DEBUG] Pressed key (CLI) = 108
+[2025-08-30 18:33:03] [DEBUG] Cl
+[2025-08-30 18:33:03] [DEBUG] Pressed key (CLI) = 101
+[2025-08-30 18:33:03] [DEBUG] Cle
+[2025-08-30 18:33:03] [DEBUG] Pressed key (CLI) = 97
+[2025-08-30 18:33:03] [DEBUG] Clea
+[2025-08-30 18:33:03] [DEBUG] Pressed key (CLI) = 114
+[2025-08-30 18:33:03] [DEBUG] Clear
+[2025-08-30 18:33:04] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-30 18:33:04] [DEBUG] Clear
+[2025-08-30 18:33:04] [DEBUG] 6
+[2025-08-30 18:33:04] [INFO] Clear
+[2025-08-30 18:33:04] [DEBUG] cli_clear()
+[2025-08-30 18:33:05] [DEBUG] Pressed key (CLI) = 101
+[2025-08-30 18:33:05] [DEBUG] e
+[2025-08-30 18:33:06] [DEBUG] Pressed key (CLI) = 120
+[2025-08-30 18:33:06] [DEBUG] ex
+[2025-08-30 18:33:06] [DEBUG] Pressed key (CLI) = 105
+[2025-08-30 18:33:06] [DEBUG] exi
+[2025-08-30 18:33:06] [DEBUG] Pressed key (CLI) = 116
+[2025-08-30 18:33:06] [DEBUG] exit
+[2025-08-30 18:33:06] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-30 18:33:06] [DEBUG] exit
+[2025-08-30 18:33:06] [DEBUG] 4
+[2025-08-30 18:33:06] [INFO] exit
+[2025-08-30 18:33:08] [DEBUG] Pressed key (CLI) = 69
+[2025-08-30 18:33:08] [DEBUG] E
+[2025-08-30 18:33:08] [DEBUG] Pressed key (CLI) = 120
+[2025-08-30 18:33:08] [DEBUG] Ex
+[2025-08-30 18:33:08] [DEBUG] Pressed key (CLI) = 105
+[2025-08-30 18:33:08] [DEBUG] Exi
+[2025-08-30 18:33:08] [DEBUG] Pressed key (CLI) = 116
+[2025-08-30 18:33:08] [DEBUG] Exit
+[2025-08-30 18:33:09] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-30 18:33:09] [DEBUG] Exit
+[2025-08-30 18:33:09] [DEBUG] 10
+[2025-08-30 18:33:09] [INFO] Exit
+[2025-08-30 18:33:10] [DEBUG] Pressed key (CLI) = 67
+[2025-08-30 18:33:10] [DEBUG] C
+[2025-08-30 18:33:10] [DEBUG] Pressed key (CLI) = 108
+[2025-08-30 18:33:10] [DEBUG] Cl
+[2025-08-30 18:33:10] [DEBUG] Pressed key (CLI) = 101
+[2025-08-30 18:33:10] [DEBUG] Cle
+[2025-08-30 18:33:10] [DEBUG] Pressed key (CLI) = 97
+[2025-08-30 18:33:10] [DEBUG] Clea
+[2025-08-30 18:33:10] [DEBUG] Pressed key (CLI) = 114
+[2025-08-30 18:33:10] [DEBUG] Clear
+[2025-08-30 18:33:11] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-30 18:33:11] [DEBUG] Clear
+[2025-08-30 18:33:11] [DEBUG] 16
+[2025-08-30 18:33:11] [INFO] Clear
+[2025-08-30 18:33:11] [DEBUG] cli_clear()

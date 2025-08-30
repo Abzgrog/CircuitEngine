@@ -2,8 +2,11 @@
 #define PROGRAM_H
 
 #include <stdbool.h>    
+#include <ncurses.h>
+#include "command_console.h"
 
 struct Circuit;
+
 
 typedef enum ProgramState {
     ProgramStateMenu,
@@ -12,8 +15,15 @@ typedef enum ProgramState {
     ProgramStateExiting,
     ProgramStateLogger
 } ProgramState;
+typedef enum CurrentWindow {
+    MainWindow,
+    CommandWindow
+} CurrentWindow;
 typedef struct Program {
+    WINDOW* main_window;
+    CommandConsole* command_console;
     bool program_running;
+    CurrentWindow current_window;
     ProgramState program_state;
     struct Circuit* circuit;
     char** prev_frame_program_buffer;

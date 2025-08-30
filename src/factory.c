@@ -3,6 +3,7 @@
 #include "program.h"
 #include "utils.h"
 #include "globals.h"
+#include "command_console.h"
 #include <stdlib.h>
 #include <ncurses.h>
 
@@ -49,9 +50,13 @@ Program* create_program() {
     if(program == NULL) {
         return NULL;
     }
+
     program->circuit = init_circuit();
     program->program_state = ProgramStateMenu;
     program->program_running = true;
+    program->current_window = MainWindow;
+    program->main_window = stdscr;
+    program->command_console = init_command_console();
 
     int width, height;
     width = get_current_window_size(GET_WIDTH);
@@ -66,7 +71,6 @@ Program* create_program() {
     for(int i = 0; i < height; i++) {
         program->prev_frame_program_buffer[i] = calloc(width, sizeof(char));
         if (program->prev_frame_program_buffer[i] == NULL) {
-            // Освободить ранее выделенную память
             for(int j = 0; j < i; j++) {
                 free(program->prev_frame_program_buffer[j]);
             }
@@ -121,7 +125,7 @@ MenuButtons* create_menu_buttons() {
     mb->buttons[2] = settings_button;
     mb->buttons[3] = exit_button;
 
-    log_message(global_logger, INFO, "Menu initialized successfully");
+    log_message(global_loger, INFO, "Menu initialized successfully..");
 
     return mb;
 }
@@ -131,6 +135,7 @@ Logger* create_logger() {
     if (logger == NULL) {
         return NULL;
     }
+
     return logger;
 }
 
@@ -175,5 +180,4 @@ void free_program(Program* p) {
         free(p);
     }
 }
-
 

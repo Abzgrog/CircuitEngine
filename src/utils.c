@@ -5,8 +5,30 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+#define __MAX_KEY_NAME_LEN 20
+
 int WIN_WIDTH;
 int WIN_HEIGHT;
+
+char* get_key_name_by_id(int key) {
+    switch(key) {
+        case 27: 
+            return "ESC";
+        case '\n': 
+            return "ENTER";
+        case KEY_F(2):
+            return "F2";
+        case KEY_UP:
+            return "UP";
+        case KEY_DOWN:
+            return "DOWN";
+        default: {
+            static char buf[__MAX_KEY_NAME_LEN];
+            snprintf(buf, __MAX_KEY_NAME_LEN, "%d", key);
+            return buf;
+        }
+    }
+}
 
 void update_window_size() {
     WIN_HEIGHT = getmaxy(stdscr);

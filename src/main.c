@@ -22,6 +22,8 @@ void initNcurses() {
 
 int main() {
     initNcurses();
+    init_all_extern_globals();
+    clear_logger_file(global_loger);
        
     run_program();
     

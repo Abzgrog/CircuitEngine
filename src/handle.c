@@ -103,38 +103,7 @@ void program_state_circuit_handle(int key) {
         }
         
         if(global_program->current_window == CommandWindow && global_program->program_state == ProgramStateCircuitProccess) {
-            if(key == '\n') {
-                char* command = global_program->command_console->current_user_command.buffer;
-                log_message(global_loger, DEBUG, command);
-
-                int msg_count = get_msg_count(global_program->command_console);
-
-                char* msg_count_str[MAX_LOG_MESSAGES];
-                sprintf(msg_count_str, "%d", msg_count);
-                log_message(global_loger, DEBUG, msg_count_str);
-
-                console_add_message(global_program->command_console, command, FALSE);
-                command_proccess(command, global_program->command_console);
-                clear_user_input_buffer(global_program->command_console);
-            } else {
-            int count = 0;
-            char new_char = (char)key;
-            count = global_program->command_console->current_user_command.counter;
-            
-            if(count >= MAX_COMMAND_LENGTH) {
-                console_add_message(global_program->command_console, "Unknown command", FALSE);
-                clear_user_input_buffer(global_program->command_console);
-                return;
-            }
-            global_program->command_console->current_user_command.counter++;
-
-            global_program->command_console->current_user_command.buffer[count] = new_char;
-            global_program->command_console->current_user_command.buffer[count + 1] = '\0';
-            //console_delete_message(global_program->command_console, 0, TRUE);
-            
-            log_message(global_loger, DEBUG, global_program->command_console->current_user_command.buffer);
-            console_add_message(global_program->command_console, global_program->command_console->current_user_command.buffer, TRUE);
-            }
+            handle_console_input(key);
         }
     }
     else {
@@ -142,6 +111,37 @@ void program_state_circuit_handle(int key) {
     }
     
 }
+void handle_console_input(int key) {
+    CommandConsole* cli = global_program->command_console;
+    UserInputCommand* user_command = &cli->current_user_command;
+
+    if (key == '\n') { // Enter
+        if (user_command->counter > 0) {
+            char command_to_process[MAX_COMMAND_LENGTH];
+            strncpy(command_to_process, user_command->buffer, user_command->counter);
+            command_to_process[user_command->counter] = '\0';
+
+            console_add_message(cli, command_to_process); // Добавить команду в историю
+            command_proccess(command_to_process, cli); // Передать команду на обработку
+            clear_user_input_buffer(cli); // Очистить текущую строку ввода
+            draw_command_console_buffer(global_program->command_console);
+        }
+    } else if (key == KEY_BACKSPACE || key == 127) { // Backspace
+        if (user_command->counter > 0) {
+            user_command->counter--;
+            user_command->buffer[user_command->counter] = '\0';
+        }
+    } else if (key >= 32 && key <= 126) { // Обычные печатаемые символы
+        if (user_command->counter < MAX_COMMAND_LENGTH - 1) {
+            user_command->buffer[user_command->counter] = (char)key;
+            user_command->counter++;
+            user_command->buffer[user_command->counter] = '\0';
+        }
+    }
+    draw_command_console_buffer(cli); // Обновить буфер консоли
+    draw_user_input_buffer(cli); // Обновить строку ввода
+}
+
 void program_state_settings_handle();// todo settingshandle
 void program_state_logger_handle(); //todo loggerhandle
 

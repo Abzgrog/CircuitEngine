@@ -40,7 +40,7 @@ CommandConsole* init_command_console() {
     update_panels();
     doupdate();
 
-    console_add_message(&cli_instance, "Console inited!", FALSE);
+    console_add_message(&cli_instance, "Console inited!");
 
     return &cli_instance;
 }
@@ -69,7 +69,7 @@ void init_func_table_functions(CommandConsole* cli) {
     insert_command(ct, "Ls", cli_command_list);
 }
 
-void console_add_message(CommandConsole* cli, const char* msg, bool current_user_input) {
+void console_add_message(CommandConsole* cli, const char* msg) {
     if (!cli) return;
 
     for (int i = 1; i < MAX_LOG_MESSAGES; i++) {
@@ -79,20 +79,19 @@ void console_add_message(CommandConsole* cli, const char* msg, bool current_user
     strncpy(cli->buffer[MAX_LOG_MESSAGES-1], msg, MAX_LOG_MESSAGES_LENGTH-1);
     cli->buffer[MAX_LOG_MESSAGES-1][MAX_LOG_MESSAGES_LENGTH-1] = '\0';
 
-    draw_command_console_buffer(cli, current_user_input);
+    draw_command_console_buffer(cli);
+    draw_user_input_buffer(cli); 
 }
 
-void console_delete_message(CommandConsole* cli, int index, bool delete_last) {
-    if(delete_last) {
-        int count = get_msg_count(cli);
-        if(count < 1) {
-            return;
-        }
-        cli->buffer[count - 1][0] = '\0';
+void console_delete_message(CommandConsole* cli, int index) {
+    int count = get_msg_count(cli);
+    if(count < 1) {
+        return;
     }
+    cli->buffer[count - 1][0] = '\0';
 }
 
-void draw_command_console_buffer(CommandConsole* cli, bool current_user_input) {
+void draw_command_console_buffer(CommandConsole* cli) {
     if (!cli || !cli->win) return;
 
     werase(cli->win);
@@ -109,9 +108,7 @@ void draw_command_console_buffer(CommandConsole* cli, bool current_user_input) {
     for (int i = start_line; i < MAX_LOG_MESSAGES && line < CONSOLE_HEIGHT - 1; i++) {
         if (cli->buffer[i][0] != '\0') {
             mvwprintw(cli->win, line, 1, "%s", cli->buffer[i]);
-            if(!current_user_input) {
                 line++;
-            }
         }
     }
 
@@ -126,7 +123,7 @@ void console_clear(CommandConsole* cli) {
     for (int i = 0; i < MAX_LOG_MESSAGES; i++) {
         cli->buffer[i][0] = '\0';
     }
-    draw_command_console_buffer(cli, FALSE);
+    draw_command_console_buffer(cli);
 }
 
 int get_msg_count(CommandConsole* cli) {
@@ -149,8 +146,8 @@ void clear_user_input_buffer(CommandConsole* cli) {
 void draw_user_input_buffer(CommandConsole* cli) {
     if (!cli || !cli->win) return;
 
-    int input_line = CONSOLE_HEIGHT - 2; // Последняя строка перед рамкой
-    mvwprintw(cli->win, input_line, 1, "%*s", CONSOLE_WIDTH - 2, ""); // Очистить строку
+    int input_line = CONSOLE_HEIGHT - 2; // last line
+    mvwprintw(cli->win, input_line, 1, "%*s", CONSOLE_WIDTH - 2, ""); 
     mvwprintw(cli->win, input_line, 1, "> %s", cli->current_user_command.buffer);
     wrefresh(cli->win);
     update_panels();
@@ -169,7 +166,7 @@ void command_proccess(char* non_validated_command, CommandConsole* cli) {
     log_message(global_loger, INFO, val_command->main_command);
 
     if (!val_command) {
-        console_add_message(cli, "Memory allocation error", FALSE);
+        console_add_message(cli, "Memory allocation error");
         return;
     }
 
@@ -179,7 +176,7 @@ void command_proccess(char* non_validated_command, CommandConsole* cli) {
     } else {
         char msg[100];
         snprintf(msg, sizeof(msg), "Unknown command: %s", val_command->main_command);
-        console_add_message(cli, msg, FALSE);
+        console_add_message(cli, msg);
     }
 
     free(val_command); 

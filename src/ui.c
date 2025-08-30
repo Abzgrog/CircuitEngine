@@ -65,7 +65,3 @@ void draw_menu() {
     attroff(COLOR_PAIR(1));
     getch();
 }
-void clear_menu() {
-    //todo 
-    //the menu should be cleared by coordinates(clear() - screen flicker)
-}

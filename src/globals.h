@@ -9,7 +9,7 @@ struct Logger;
 #define BUFFER_HEIGHT 30
 
 extern struct Program* global_program;
-extern struct Logger* global_logger;
+extern struct Logger* global_loger;
 
 void init_all_extern_globals();
 

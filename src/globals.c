@@ -2,10 +2,10 @@
 #include "factory.h"
 #include "program.h"
 
+struct Logger* global_loger;
 struct Program* global_program;
-struct Logger* global_logger;
 
 void init_all_extern_globals() {
-   global_logger = create_logger();
+   global_loger = create_logger();
    global_program = create_program();
 }

@@ -8,6 +8,8 @@
 #include "handle.h"
 #include "ui.h"
 #define KEY_ESC 27
+bool skip_first_enter = 0;
+
 
 void mouse_handle(MEVENT mv) {
     return;
@@ -66,7 +68,6 @@ void program_state_menu_handle(int key) {
     }
 
     if(key == '\n') {
-        log_message(global_logger, DEBUG, "Enter was pressed");
         int idx = 0;
         for(int i = 0; i < MENU_BUTTONS_COUNT; i++) {
             if(mb->buttons[i]->selected) {
@@ -79,6 +80,9 @@ void program_state_menu_handle(int key) {
         
         if(strcmp(mb->buttons[idx]->name, "NEW CIRCUIT") == 0) {
             global_program->program_state = ProgramStateCircuitProccess;
+            global_program->current_window = CommandWindow;
+            skip_first_enter = TRUE;
+            return;
         } 
 
         if(strcmp(mb->buttons[idx]->name, "LOAD CIRCUIT") == 0) {
@@ -90,12 +94,54 @@ void program_state_menu_handle(int key) {
 }
 
 void program_state_circuit_handle(int key) {
-    if(key == KEY_ESC) {
-        global_program->program_state = ProgramStateMenu;
-        clear();
-        refresh();
+    if(global_program->program_state == ProgramStateCircuitProccess) {
+        if(key == KEY_ESC) {
+            global_program->program_state = ProgramStateMenu;
+            global_program->current_window = MainWindow;
+            clear();
+            refresh();
+        }
+        
+        if(global_program->current_window == CommandWindow && global_program->program_state == ProgramStateCircuitProccess) {
+            handle_console_input(key);
+        }
     }
+    else {
+        log_message(global_loger, WARNING, ":101");
+    }
+    
 }
+void handle_console_input(int key) {
+    CommandConsole* cli = global_program->command_console;
+    UserInputCommand* user_command = &cli->current_user_command;
+
+    if (key == '\n') { // Enter
+        if (user_command->counter > 0) {
+            char command_to_process[MAX_COMMAND_LENGTH];
+            strncpy(command_to_process, user_command->buffer, user_command->counter);
+            command_to_process[user_command->counter] = '\0';
+
+            console_add_message(cli, command_to_process); // Добавить команду в историю
+            command_proccess(command_to_process, cli); // Передать команду на обработку
+            clear_user_input_buffer(cli); // Очистить текущую строку ввода
+            draw_command_console_buffer(global_program->command_console);
+        }
+    } else if (key == KEY_BACKSPACE || key == 127) { // Backspace
+        if (user_command->counter > 0) {
+            user_command->counter--;
+            user_command->buffer[user_command->counter] = '\0';
+        }
+    } else if (key >= 32 && key <= 126) { // Обычные печатаемые символы
+        if (user_command->counter < MAX_COMMAND_LENGTH - 1) {
+            user_command->buffer[user_command->counter] = (char)key;
+            user_command->counter++;
+            user_command->buffer[user_command->counter] = '\0';
+        }
+    }
+    draw_command_console_buffer(cli); // Обновить буфер консоли
+    draw_user_input_buffer(cli); // Обновить строку ввода
+}
+
 void program_state_settings_handle();// todo settingshandle
 void program_state_logger_handle(); //todo loggerhandle
 
@@ -104,6 +150,10 @@ void keyboard_handle(int key) {
         program_state_menu_handle(key);
     } 
     if(global_program->program_state == ProgramStateCircuitProccess) {
+        if(skip_first_enter && key == '\n') {
+            skip_first_enter = false;
+            return;
+        }
         program_state_circuit_handle(key);
     }
     //todo else variations

@@ -7,17 +7,26 @@
 #include "globals.h"
 #include "logger.h"
 #include "command_table.h"
+#include "components.h"
 
-#define CONSOLE_HEIGHT 25
-#define CONSOLE_WIDTH  60
 
+#define HELP_STR_INTRO "Current avalible commands:"
+#define HELP_STR_COMMAND_EXIT "Exit:    Leave from current circuit"
+#define HELP_STR_COMMAND_LIST "Ls:      Give list all components of circuit"
+#define HELP_STR_COMMAND_CLEAR"Cls:     Clearing console visible buffer"
+#define HELP_STR_COMMAND_SAVE "Sv:      Saving circuit to current openned file"
+#define HELP_STR_COMMAND_SAVE_AND_EXIT "Svex:    Saving circuit to current openned file than exit to menu"
+#define HELP_STR_COMMAND_CREATE_COMPONENT "Cp:      Creating component(Cp(CpType, val1, val2, coordX, coordY))"
+
+#define CONSOLE_HEIGHT 37
+#define CONSOLE_WIDTH  75
 
 CommandConsole* init_command_console() {
     static CommandConsole cli_instance;
     static bool initialized = false;
 
     if (!initialized) {
-        cli_instance.win = newwin(CONSOLE_HEIGHT, CONSOLE_WIDTH, 4, 110);
+        cli_instance.win = newwin(CONSOLE_HEIGHT, CONSOLE_WIDTH, 3, 110);
         cli_instance.pan = new_panel(cli_instance.win);
         nodelay(cli_instance.win, TRUE); 
         keypad(cli_instance.win, TRUE);  
@@ -34,12 +43,12 @@ CommandConsole* init_command_console() {
         init_func_table_functions(&cli_instance);
         initialized = true;
     }
-
+    void print_helping_info();
     box(cli_instance.win, 0, 0);
     wrefresh(cli_instance.win);
     update_panels();
     doupdate();
-
+    
     console_add_message(&cli_instance, "Console inited!");
 
     return &cli_instance;
@@ -51,22 +60,44 @@ void cli_command_clear() {
 }
 
 void cli_command_help() {
-
+    console_clear(global_program->command_console);
+    console_add_message(global_program->command_console, HELP_STR_INTRO);
+    console_add_message(global_program->command_console, HELP_STR_COMMAND_CLEAR);
+    console_add_message(global_program->command_console, HELP_STR_COMMAND_EXIT);
+    console_add_message(global_program->command_console, HELP_STR_COMMAND_LIST);
+    console_add_message(global_program->command_console, HELP_STR_COMMAND_SAVE);
+    console_add_message(global_program->command_console, HELP_STR_COMMAND_SAVE_AND_EXIT);
+    console_add_message(global_program->command_console, HELP_STR_COMMAND_CREATE_COMPONENT);
 }
 
 void cli_command_list() {
+    //todo
+}
 
+void cli_command_save() {
+    //todo
+}
+
+void cli_command_save_and_exit() {
+    //todo
+}
+
+void cli_command_create_component(ComponentType, int val1, bool val2, int coord1, int coord2) {
+    //todo 
 }
 
 void cli_command_exit() {
-
+    global_program->current_window = MainWindow;
+    global_program->program_state = ProgramStateMenu;
 }
+
 void init_func_table_functions(CommandConsole* cli) {
     CommandTable* ct = cli->func_table;
 
-    insert_command(ct, "Clear", cli_command_clear);
+    insert_command(ct, "Cls", cli_command_clear);
     insert_command(ct, "Exit", cli_command_exit);
     insert_command(ct, "Ls", cli_command_list);
+    insert_command(ct, "Help", cli_command_help);
 }
 
 void console_add_message(CommandConsole* cli, const char* msg) {
@@ -163,6 +194,7 @@ ValidatedCommand* validate_command(char* user_input) {
 }
 void command_proccess(char* non_validated_command, CommandConsole* cli) {
     ValidatedCommand* val_command = validate_command(non_validated_command);
+    
     log_message(global_loger, INFO, val_command->main_command);
 
     if (!val_command) {
@@ -177,6 +209,7 @@ void command_proccess(char* non_validated_command, CommandConsole* cli) {
         char msg[100];
         snprintf(msg, sizeof(msg), "Unknown command: %s", val_command->main_command);
         console_add_message(cli, msg);
+        console_add_message(cli, "Type \"Help\" for list of commands!");
     }
 
     free(val_command); 

@@ -37,6 +37,7 @@ void init_func_table_functions(CommandConsole* cli);
 int get_msg_count(CommandConsole* cli);
 void console_delete_message(CommandConsole* cli, int index);
 void cli_command_clear();
+void print_helping_info();
 
 ValidatedCommand* validate_command(char* user_input);
 CommandConsole* init_command_console();

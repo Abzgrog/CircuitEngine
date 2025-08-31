@@ -1,39 +1,73 @@
-[2025-08-30 18:54:32] [INFO] Menu initialized successfully..
-[2025-08-30 18:54:34] [DEBUG] Pressed key (MAIN) = DOWN
-[2025-08-30 18:54:34] [DEBUG] Pressed key (MAIN) = UP
-[2025-08-30 18:54:34] [DEBUG] Pressed key (MAIN) = ENTER
-[2025-08-30 18:54:35] [DEBUG] Pressed key (CLI) = 67
-[2025-08-30 18:54:35] [DEBUG] Pressed key (CLI) = 108
-[2025-08-30 18:54:35] [DEBUG] Pressed key (CLI) = 101
-[2025-08-30 18:54:35] [DEBUG] Pressed key (CLI) = 97
-[2025-08-30 18:54:36] [DEBUG] Pressed key (CLI) = 114
-[2025-08-30 18:54:36] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-30 18:54:36] [INFO] Clear
-[2025-08-30 18:54:36] [DEBUG] cli_clear()
-[2025-08-30 18:54:37] [DEBUG] Pressed key (CLI) = 109
-[2025-08-30 18:54:37] [DEBUG] Pressed key (CLI) = 97
-[2025-08-30 18:54:37] [DEBUG] Pressed key (CLI) = 107
-[2025-08-30 18:54:37] [DEBUG] Pressed key (CLI) = 101
-[2025-08-30 18:54:37] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-30 18:54:37] [INFO] make
-[2025-08-30 18:54:38] [DEBUG] Pressed key (CLI) = 99
-[2025-08-30 18:54:38] [DEBUG] Pressed key (CLI) = 108
-[2025-08-30 18:54:39] [DEBUG] Pressed key (CLI) = 101
-[2025-08-30 18:54:39] [DEBUG] Pressed key (CLI) = 97
-[2025-08-30 18:54:39] [DEBUG] Pressed key (CLI) = 114
-[2025-08-30 18:54:39] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-30 18:54:39] [INFO] clear
-[2025-08-30 18:54:41] [DEBUG] Pressed key (CLI) = ESC
-[2025-08-30 18:54:41] [DEBUG] Pressed key (MAIN) = UP
-[2025-08-30 18:54:41] [DEBUG] Pressed key (MAIN) = ENTER
-[2025-08-30 18:54:41] [INFO] The program finished successfully
-[2025-08-30 19:02:10] [INFO] clear
-[2025-08-30 19:02:12] [INFO] Clear
-[2025-08-30 19:02:17] [INFO] Patuntik
-[2025-08-30 19:02:22] [INFO] asdawdasdawd
-[2025-08-30 19:02:27] [INFO] Clear
-[2025-08-30 19:02:52] [INFO] alsdlasd
-[2025-08-30 19:03:03] [INFO] lalssssssssssssss
-[2025-08-30 19:03:09] [INFO] clear
-[2025-08-30 19:03:10] [INFO] Clear
-[2025-08-30 19:03:14] [INFO] The program finished successfully
+[2025-08-31 14:38:11] [INFO] Menu initialized successfully..
+[2025-08-31 14:38:12] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 104
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 101
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 112
+[2025-08-31 14:38:16] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:28] [DEBUG] Pressed key (CLI) = 409
+[2025-08-31 14:38:28] [DEBUG] Pressed key (CLI) = 409
+[2025-08-31 14:38:28] [DEBUG] Pressed key (CLI) = 101
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 120
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 69
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = 120
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = 105
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = 116
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:30] [INFO] Exit
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = DOWN
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = DOWN
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = DOWN
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:32] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 71
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 72
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 101
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:34] [DEBUG] Pressed key (CLI) = 112
+[2025-08-31 14:38:34] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:34] [INFO] Help
+[2025-08-31 14:38:35] [DEBUG] Pressed key (CLI) = 99
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 115
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:36] [INFO] cls
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 67
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 115
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:36] [INFO] Cls
+[2025-08-31 14:38:36] [DEBUG] cli_clear()
+[2025-08-31 14:38:37] [DEBUG] Pressed key (CLI) = 69
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = 120
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = 105
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = 116
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:38] [INFO] Exit
+[2025-08-31 14:38:39] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:41] [DEBUG] Pressed key (CLI) = ESC
+[2025-08-31 14:38:41] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:42] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:42] [INFO] The program finished successfully

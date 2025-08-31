@@ -21,6 +21,7 @@ void kill_terminal();
 void print_in_center(char string[]);
 long long get_current_time_ms();
 char* get_key_name_by_id(int key);
+void print_helping_info(int x, int y);
 typedef enum {
     UP,
     DOWN,

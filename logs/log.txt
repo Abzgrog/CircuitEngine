@@ -1,42 +1,73 @@
-[2025-08-31 13:13:18] [INFO] Menu initialized successfully..
-[2025-08-31 13:13:18] [DEBUG] Pressed key (MAIN) = ENTER
-[2025-08-31 13:13:20] [DEBUG] Pressed key (CLI) = 72
-[2025-08-31 13:13:20] [DEBUG] Pressed key (CLI) = 101
-[2025-08-31 13:13:20] [DEBUG] Pressed key (CLI) = 108
-[2025-08-31 13:13:19] [DEBUG] Pressed key (CLI) = 112
-[2025-08-31 13:13:20] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-31 13:13:20] [INFO] Help
-[2025-08-31 13:13:21] [DEBUG] Pressed key (CLI) = 67
-[2025-08-31 13:13:21] [DEBUG] Pressed key (CLI) = 108
-[2025-08-31 13:13:21] [DEBUG] Pressed key (CLI) = 101
-[2025-08-31 13:13:21] [DEBUG] Pressed key (CLI) = 97
-[2025-08-31 13:13:21] [DEBUG] Pressed key (CLI) = 114
-[2025-08-31 13:13:21] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-31 13:13:21] [INFO] Clear
-[2025-08-31 13:13:22] [DEBUG] Pressed key (CLI) = 99
-[2025-08-31 13:13:22] [DEBUG] Pressed key (CLI) = 108
-[2025-08-31 13:13:22] [DEBUG] Pressed key (CLI) = 115
-[2025-08-31 13:13:23] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-31 13:13:23] [INFO] cls
-[2025-08-31 13:13:23] [DEBUG] Pressed key (CLI) = 67
-[2025-08-31 13:13:23] [DEBUG] Pressed key (CLI) = 108
-[2025-08-31 13:13:23] [DEBUG] Pressed key (CLI) = 115
-[2025-08-31 13:13:23] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-31 13:13:23] [INFO] Cls
-[2025-08-31 13:13:23] [DEBUG] cli_clear()
-[2025-08-31 13:13:24] [DEBUG] Pressed key (CLI) = 72
-[2025-08-31 13:13:24] [DEBUG] Pressed key (CLI) = 101
-[2025-08-31 13:13:24] [DEBUG] Pressed key (CLI) = 108
-[2025-08-31 13:13:25] [DEBUG] Pressed key (CLI) = 112
-[2025-08-31 13:13:25] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-31 13:13:25] [INFO] Help
-[2025-08-31 13:13:25] [DEBUG] Pressed key (CLI) = 101
-[2025-08-31 13:13:26] [DEBUG] Pressed key (CLI) = 263
-[2025-08-31 13:13:26] [DEBUG] Pressed key (CLI) = 69
-[2025-08-31 13:13:26] [DEBUG] Pressed key (CLI) = 120
-[2025-08-31 13:13:26] [DEBUG] Pressed key (CLI) = 105
-[2025-08-31 13:13:26] [DEBUG] Pressed key (CLI) = 116
-[2025-08-31 13:13:26] [DEBUG] Pressed key (CLI) = ENTER
-[2025-08-31 13:13:26] [INFO] Exit
-[2025-08-31 13:13:28] [DEBUG] Pressed key (MAIN) = ESC
-[2025-08-31 13:13:28] [INFO] The program finished successfully
+[2025-08-31 14:38:11] [INFO] Menu initialized successfully..
+[2025-08-31 14:38:12] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 104
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 101
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:15] [DEBUG] Pressed key (CLI) = 112
+[2025-08-31 14:38:16] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:17] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:28] [DEBUG] Pressed key (CLI) = 409
+[2025-08-31 14:38:28] [DEBUG] Pressed key (CLI) = 409
+[2025-08-31 14:38:28] [DEBUG] Pressed key (CLI) = 101
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 120
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:29] [DEBUG] Pressed key (CLI) = 69
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = 120
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = 105
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = 116
+[2025-08-31 14:38:30] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:30] [INFO] Exit
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = DOWN
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = DOWN
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = DOWN
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:31] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:32] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 71
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 263
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 72
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 101
+[2025-08-31 14:38:33] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:34] [DEBUG] Pressed key (CLI) = 112
+[2025-08-31 14:38:34] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:34] [INFO] Help
+[2025-08-31 14:38:35] [DEBUG] Pressed key (CLI) = 99
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 115
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:36] [INFO] cls
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 67
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 108
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = 115
+[2025-08-31 14:38:36] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:36] [INFO] Cls
+[2025-08-31 14:38:36] [DEBUG] cli_clear()
+[2025-08-31 14:38:37] [DEBUG] Pressed key (CLI) = 69
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = 120
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = 105
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = 116
+[2025-08-31 14:38:38] [DEBUG] Pressed key (CLI) = ENTER
+[2025-08-31 14:38:38] [INFO] Exit
+[2025-08-31 14:38:39] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:41] [DEBUG] Pressed key (CLI) = ESC
+[2025-08-31 14:38:41] [DEBUG] Pressed key (MAIN) = UP
+[2025-08-31 14:38:42] [DEBUG] Pressed key (MAIN) = ENTER
+[2025-08-31 14:38:42] [INFO] The program finished successfully

@@ -11,8 +11,8 @@
 #include "command_console.h"
 
 #define FRAME_RATE 32
-#define MIN_ROWS 30
-#define MIN_COLS 150
+#define MIN_ROWS 50
+#define MIN_COLS 202
 
 bool check_fullscreen() {
     int rows, cols;
@@ -99,11 +99,14 @@ void run_program() {
         // ----- 2. Draw Frame -----
         werase(stdscr);
         //box(stdscr, 'X', 'x');
+
+        attron(A_BOLD);
         wborder(stdscr,
         '|', '|',    // левая/правая граница
         '-', '-',    // верх/низ
         '+', '+',    // верхние углы
         '+', '+');  
+        attroff(A_BOLD);
 
         if (global_program->program_state == ProgramStateMenu) {
             draw_menu();
@@ -111,7 +114,8 @@ void run_program() {
             if (global_program->current_window != CommandWindow) {
                 global_program->current_window = CommandWindow;
             }
-            draw_grid();
+            draw_square_grid(3, 5, 3, 7, 15, 14);
+            print_helping_info(111, 42);
           //  draw_command_console_buffer(global_program->command_console, );
         }
 

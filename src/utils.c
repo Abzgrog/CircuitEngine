@@ -85,6 +85,20 @@ void kill_terminal() {
     exit(0);
 }
 
+void print_helping_info(int x, int y) {
+    attron(A_BOLD | COLOR_PAIR(1));
+    mvwprintw(stdscr, y, x, "Type \"Help\" for more information about commands.\tType \"Cpt\" for get all types of component" );
+    attroff(A_BOLD | COLOR_PAIR(1));
+    
+    attron(A_BOLD | COLOR_PAIR(1));
+    mvwprintw(stdscr, y+2, x, "Type \"CpInfo\" for info about creating comp.\tType \"Run\" for start circuit!" );
+    attroff(A_BOLD | COLOR_PAIR(1));
+    
+    attron(A_BOLD | COLOR_PAIR(1));
+    mvwprintw(stdscr, y+4, x, "Type \"Stop\" for stop circuit work.\t\tGood Luck!" );
+    attroff(A_BOLD | COLOR_PAIR(1));
+}
+
 long long get_current_time_ms() {
     struct timeval tv;
     gettimeofday(&tv, NULL);

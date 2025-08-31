@@ -1,9 +1,6 @@
 #ifndef CIRCUIT_UI_H
 #define CIRCUIT_UI_H
 
-static void draw_cell();
-static void draw_component();
-void draw_grid();
-void draw_all_components();
+void draw_square_grid(int start_y, int start_x, int square_height, int square_width, int rows, int cols);
 
 #endif

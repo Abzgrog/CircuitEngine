@@ -18,20 +18,15 @@
 #define HELP_STR_COMMAND_SAVE_AND_EXIT "Svex:    Saving circuit to current openned file than exit to menu"
 #define HELP_STR_COMMAND_CREATE_COMPONENT "Cp:      Creating component(Cp(CpType, val1, val2, coordX, coordY))"
 
-#define RED 1
-#define GREEN 2
-#define CYAN 3
-#define WHITE 4
-
-#define CONSOLE_HEIGHT 25
-#define CONSOLE_WIDTH  70
+#define CONSOLE_HEIGHT 37
+#define CONSOLE_WIDTH  75
 
 CommandConsole* init_command_console() {
     static CommandConsole cli_instance;
     static bool initialized = false;
 
     if (!initialized) {
-        cli_instance.win = newwin(CONSOLE_HEIGHT, CONSOLE_WIDTH, 4, 110);
+        cli_instance.win = newwin(CONSOLE_HEIGHT, CONSOLE_WIDTH, 3, 110);
         cli_instance.pan = new_panel(cli_instance.win);
         nodelay(cli_instance.win, TRUE); 
         keypad(cli_instance.win, TRUE);  
@@ -48,12 +43,12 @@ CommandConsole* init_command_console() {
         init_func_table_functions(&cli_instance);
         initialized = true;
     }
-
+    void print_helping_info();
     box(cli_instance.win, 0, 0);
     wrefresh(cli_instance.win);
     update_panels();
     doupdate();
-
+    
     console_add_message(&cli_instance, "Console inited!");
 
     return &cli_instance;
@@ -88,13 +83,14 @@ void cli_command_save_and_exit() {
 }
 
 void cli_command_create_component(ComponentType, int val1, bool val2, int coord1, int coord2) {
-    //todo
+    //todo 
 }
 
 void cli_command_exit() {
     global_program->current_window = MainWindow;
     global_program->program_state = ProgramStateMenu;
 }
+
 void init_func_table_functions(CommandConsole* cli) {
     CommandTable* ct = cli->func_table;
 
@@ -213,7 +209,7 @@ void command_proccess(char* non_validated_command, CommandConsole* cli) {
         char msg[100];
         snprintf(msg, sizeof(msg), "Unknown command: %s", val_command->main_command);
         console_add_message(cli, msg);
-        console_add_message(cli, "Type \"Help\" for more list of commands!");
+        console_add_message(cli, "Type \"Help\" for list of commands!");
     }
 
     free(val_command); 
